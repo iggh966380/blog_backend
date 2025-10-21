@@ -5,8 +5,8 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    const result = await pool.query("SELECT * FROM nodes");
-    console.log(result);
+    const result = await pool.query("SELECT * FROM router");
+    console.log(result.rows);
     res.json(result.rows);
   } catch (err) {
     console.error(err);
